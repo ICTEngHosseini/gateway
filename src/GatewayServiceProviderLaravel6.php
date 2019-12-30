@@ -28,8 +28,7 @@ class GatewayServiceProviderLaravel6 extends ServiceProvider
         //php artisan vendor:publish --provider=Larabookir\Gateway\GatewayServiceProvider --tag=config
         $this->publishes([
             $config => config_path('gateway.php'),
-        ], 'config')
-        ;
+        ], 'config');
 
         // php artisan vendor:publish --provider=Larabookir\Gateway\GatewayServiceProvider --tag=migrations
         $this->publishes([

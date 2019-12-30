@@ -12,74 +12,74 @@ return [
     // Zarinpal gateway
     //--------------------------------
     'zarinpal' => [
-        'merchant-id'  => 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx',
-        'type'         => 'zarin-gate',             // Types: [zarin-gate || normal]
-        'callback-url' => '/',
-        'server'       => 'germany',                // Servers: [germany || iran || test]
-        'email'        => 'email@gmail.com',
-        'mobile'       => '09xxxxxxxxx',
-        'description'  => 'description',
+      'merchant-id'  => env('MERCHANT_ID', 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'),
+      'type'         => env('TYPE', 'zarin-gate'),             // Types: [zarin-gate || normal]
+      'callback-url' => env('CALLBACK_URL', '/'),
+      'server'       => env('SERVER', 'germany'),                // Servers: [germany || iran || test]
+      'email'        => env('EMAIL', 'email@gmail.com'),
+      'mobile'       => env('MOBILE', '09xxxxxxxxx'),
+      'description'  => env('DESCRIPTION', 'description'),
     ],
 
     //--------------------------------
     // Mellat gateway
     //--------------------------------
     'mellat' => [
-        'username'     => '',
-        'password'     => '',
-        'terminalId'   => 0000000,
-        'callback-url' => '/'
+        'username'     => env('USERNAME', ''),
+        'password'     => env('PASSWORD', ''),
+        'terminalId'   => env('TERMINAL_ID', '0000000'),
+        'callback-url' => env('CALLBACK_URL', '/'),
     ],
 
     //--------------------------------
     // Saman gateway
     //--------------------------------
     'saman' => [
-        'merchant'     => '',
-        'password'     => '',
-        'callback-url'   => '/',
+        'merchant'     => env('MERCHANT', ''),
+        'password'     => env('PASSWORD', ''),
+        'callback-url'   => env('CALLBACK_URL', '/'),
     ],
 
     //--------------------------------
     // PayIr gateway
     //--------------------------------
     'payir'    => [
-        'api'          => 'xxxxxxxxxxxxxxxxxxxx',
-        'callback-url' => '/'
+        'api'          => env('API_PAYIR', 'xxxxxxxxxxxxxxxxxxxx'),
+        'callback-url' => env('CALLBACK_URL', '/'),
     ],
 
     //--------------------------------
     // IranKish gateway
     //--------------------------------
     'irankish' => [
-        'merchantId' => 'xxxxxxxxxxxxxxxxxxxx',
-        'sha1key' => 'xxxxxxxxxxxxxxxxxxxx',
-        'callback-url' => '/'
+        'merchantId'  => env('MERCHANT_ID', 'xxxxxxxxxxxxxxxxxxxx'),
+        'sha1key' => env('SHA1KEY', 'xxxxxxxxxxxxxxxxxxxx'),
+        'callback-url'   => env('CALLBACK_URL', '/'),
     ],
 
     //--------------------------------
     // Sadad gateway
     //--------------------------------
     'sadad' => [
-        'merchant'      => '',
-        'transactionKey'=> '',
-        'terminalId'    => 000000000,
-        'callback-url'  => '/'
+        'merchant'      => env('MERCHANT', ''),
+        'transactionKey'=> env('TRANSACTIONKEY', ''),
+        'terminalId'    => env('TERMINAL_ID', '000000000'),
+        'callback-url'   => env('CALLBACK_URL', '/'),
     ],
 
     //--------------------------------
     // Parsian gateway
     //--------------------------------
     'parsian' => [
-        'pin'          => 'xxxxxxxxxxxxxxxxxxxx',
-        'callback-url' => '/'
+        'pin'          => env('PIN_PARSIAN', 'xxxxxxxxxxxxxxxxxxxx'),
+        'callback-url'   => env('CALLBACK_URL', '/'),
     ],
     //--------------------------------
     // Pasargad gateway
     //--------------------------------
     'pasargad' => [
-        'terminalId'    => 000000,
-        'merchantId'    => 000000,
+        'terminalId'    => env('TERMINAL_ID', '000000000'),
+        'merchantId'    => env('MERCHANT_ID', '000000'),
         'certificate-path'    => storage_path('gateway/pasargad/certificate.xml'),
         'callback-url' => '/gateway/callback/pasargad'
     ],
@@ -88,13 +88,13 @@ return [
     // Asan Pardakht gateway
     //--------------------------------
     'asanpardakht' => [
-        'merchantId'     => '',
-        'merchantConfigId'     => '',
-        'username' => '',
-        'password' => '',
-        'key' => '',
-        'iv' => '',
-        'callback-url'   => '/',
+        'merchantId'     => env('MERCHANT_ID', ''),
+        'merchantConfigId'     => env('MERCHANT_CONFIG_ID', ''),
+        'username' => env('USERNAME', ''),
+        'password' => env('PASSWORD', ''),
+        'key' => env('KEY', ''),
+        'iv' => env('IV', ''),
+        'callback-url'   => env('CALLBACK_URL', '/'),
     ],
 
     //--------------------------------
@@ -102,11 +102,11 @@ return [
     //--------------------------------
     'paypal'   => [
         // Default product name that appear on paypal payment items
-        'default_product_name' => 'My Product',
-        'default_shipment_price' => 0,
+        'default_product_name' => env('DEFAULT_PRODUCT_NAME', 'My Product'),
+        'default_shipment_price' => env('DEFAULT_SHIPMENT_PRICE', ''),
         // set your paypal credential
-        'client_id' => 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-        'secret'    => 'xxxxxxxxxx_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+        'client_id' => env('CLIENT_ID', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),
+        'secret'    => env('SECRET', 'xxxxxxxxxx_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),
         'settings'  => [
             'mode'                   => 'sandbox', //'sandbox' or 'live'
             'http.ConnectionTimeOut' => 30,
